@@ -13,7 +13,7 @@ pipeline {
             steps {
 	        echo 'Disting'
                 sh 'pwd'
-                sh 'cp ./fib.py /usr/bin'
+                sh 'sudo cp ./fib.py /usr/bin'
  
             }
         }
