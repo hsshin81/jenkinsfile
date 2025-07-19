@@ -9,7 +9,9 @@ pipeline {
             }
         }
         stage('Dist') {
-	    echo 'Disting'
+            steps {
+	        echo 'Disting'
+            }
         }
     }
 }
