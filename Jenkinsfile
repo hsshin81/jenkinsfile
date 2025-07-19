@@ -15,7 +15,7 @@ pipeline {
                     echo 'Disting'
                     sh 'pwd'
                     sh """
-                        scp -i $KEYFILE -o StrictHostKeyChecking=no fib.py git@github.com:hsshin81/fib.git
+                        scp -i $KEYFILE -o StrictHostKeyChecking=no fib.py git@github.com:hsshin81/fib/blob/master/
                     """
                 }
             }
