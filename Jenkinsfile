@@ -11,14 +11,21 @@ pipeline {
         }
         stage('Dist') {
             steps {
-	        withCredentials([sshUserPrivateKey(credentialsId: 'heesungshin_id', keyFileVariable: 'KEYFILE')]) {
-                    echo 'Disting'
-                    sh 'pwd'
-                    sh """
-                        scp -i $KEYFILE -o StrictHostKeyChecking=no fib.py git@github.com:hsshin81/fib/blob/master/
-                    """
-                }
+                echo 'Disting'
+                sh 'cp fib.py /home/heesungshin'
+                sh 'chmod +x fib.py"
             }
         }
+//        stage('Dist') {
+//            steps {
+//	        withCredentials([sshUserPrivateKey(credentialsId: 'heesungshin_id', keyFileVariable: 'KEYFILE')]) {
+//                    echo 'Disting'
+//                    sh 'pwd'
+//                    sh """
+//                        scp -i $KEYFILE -o StrictHostKeyChecking=no fib.py git@github.com:hsshin81/fib/blob/master/
+//                    """
+//                }
+//            }
+//        }
     }
 }
