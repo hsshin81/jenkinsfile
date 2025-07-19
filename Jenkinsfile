@@ -11,10 +11,12 @@ pipeline {
         }
         stage('Dist') {
             steps {
-	        echo 'Disting'
-                sh 'pwd'
-                sh 'sudo cp ./fib.py /usr/bin'
- 
+	        withCredentials([sshUserPrivateKey(credentialsId: 'id_ed25519', keyFileVariable: 'KEYFILE')]) {
+                    echo 'Disting'
+                    sh 'pwd'
+                    sh """
+                        scp -i $KEYFILE -o StrictHostKeyChecking=no fib.py git@github.com:hsshin81/jenkinsfile.git
+                    """
             }
         }
     }
