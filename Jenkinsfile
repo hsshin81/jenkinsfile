@@ -13,8 +13,7 @@ pipeline {
         stage('Dist') {
             steps {
                 echo 'Disting'
-                sh 'cp fib.py /home/heesungshin'
-                sh 'chmod +x fib.py'
+                sh 'cp fib.py /home/heesungshin && cd /home/heesungshin && chmod +x fib.py'
             }
         }
 //        stage('Dist') {
