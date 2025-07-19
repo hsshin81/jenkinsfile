@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Dist') {
             steps {
-	        withCredentials([sshUserPrivateKey(credentialsId: 'id_ed25519', keyFileVariable: 'KEYFILE')]) {
+	        withCredentials([sshUserPrivateKey(credentialsId: 'heesungshin_id', keyFileVariable: 'KEYFILE')]) {
                     echo 'Disting'
                     sh 'pwd'
                     sh """
