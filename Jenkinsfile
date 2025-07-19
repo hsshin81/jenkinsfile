@@ -5,7 +5,7 @@ pipeline {
         stage('Hello') {
             steps {
                 echo 'Hello World'
-		git 'git@github.com:hsshin81/fib.git'
+		git 'https://github.com/hsshin81/jenkinsfile.git'
             }
         }
         stage('Dist') {
