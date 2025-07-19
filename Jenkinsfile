@@ -5,12 +5,16 @@ pipeline {
         stage('Hello') {
             steps {
                 echo 'Hello World'
-		git 'https://github.com/hsshin81/jenkinsfile.git'
+		git 'https://github.com/hsshin81/fib.git'
+                
             }
         }
         stage('Dist') {
             steps {
 	        echo 'Disting'
+                sh 'pwd'
+                sh 'cp ./fib.py /usr/bin'
+ 
             }
         }
     }
