@@ -17,6 +17,7 @@ pipeline {
                     sh """
                         scp -i $KEYFILE -o StrictHostKeyChecking=no fib.py git@github.com:hsshin81/jenkinsfile.git
                     """
+                }
             }
         }
     }
