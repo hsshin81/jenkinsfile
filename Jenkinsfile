@@ -5,6 +5,7 @@ pipeline {
         stage('Hello') {
             steps {
                 echo 'Hello World'
+                sh 'whoami'
 		git 'https://github.com/hsshin81/fib.git'
                 
             }
